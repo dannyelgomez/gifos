@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proyecto 2</title>
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/hamburguer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div class="edgePage"></div>
+    <header>
+        <a href="index.html" class="logo"><img src="img/logo-mobile.svg" alt="logo page"></a>
+
+        <nav>
+            <div class="containerBurger">
+                <i id="navBar" class="fas fa-bars menu"></i>
+            </div>
+            <ul id="ulNavBar">
+                <li><a href="#" id="theme">Modo Nocturno</a></li>
+                <li><a href="favorites.html">Favoritos</a></li>
+                <li><a href="myGifos.html">Mis GIFOS</a></li>
+            </ul>
+        </nav>
+        <a href="createGifos.html" class="hiddenCreateGifos"><img src="img/button-crear-gifo.svg" class="createGifo" alt=""></a>
+    </header>
+
+    <main>
+        <section class="createGifos">
+            <div class="cam">
+                <img src="/img/camara.svg" alt="">
+                <img src="/img/element-luz-camara.svg" alt="">
+                <div class="camLoad" id="camLoad">
+                    <h2>Aquí podrás <br> crear tus propios <span>GIFOS</span></h2>
+                    <p>Crea tu GIFO en solo 3 pasos! <br> (solo necesitas una cámara para grabar un video)</p>
+                    <video autoplay></video>
+                </div>
+            </div>
+            <div class="page">
+                <span id="btnAllowCam">1</span>
+                <span id="btnRecordCam">2</span>
+                <span id="btnUploadCam">3</span>
+                <p></p>
+                <img src="/img/pelicula.svg" alt="">
+            </div>
+            <div class="separator"></div>
+            <button class="buttonGeneral" id="btnStart">COMENZAR</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>Compartir en:</p>
+        <div>
+            <a href=""><img src="img/icon_facebook.svg" alt=""></a>
+            <a href=""><img src="img/icon-twitter.svg" alt=""></a>
+            <a href=""><img src="img/icon_instagram.svg" alt=""></a>
+        </div>
+        <p>©️ GIFOS 2020 All Rights Reserved.</p>
+
+    </footer>
+    <div class="edgePage"></div>
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/createGifos.js"></script>
+</body>
+
+</html>

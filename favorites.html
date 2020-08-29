@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+</head>
+
+<body onload="loadContentFav()">
+    <div class="edgePage"></div>
+    <header>
+        <a href="index.html" class="logo"><img src="img/logo-mobile.svg" alt="logo pagina"></a>
+
+        <nav>
+            <div class="containerBurger">
+                <i id="navBar" class="fas fa-bars menu"></i>
+            </div>
+            <ul id="ulNavBar">
+                <li><a href="#" id="theme">Modo Nocturno</a></li>
+                <li><a href="favorites.html">Favoritos</a></li>
+                <li><a href="myGifos.html">Mis GIFOS</a></li>
+            </ul>
+        </nav>
+        <a href="createGifos.html" class="hiddenCreateGifos"><img src="img/button-crear-gifo.svg" class="createGifo" alt=""></a>
+    </header>
+    <main>
+
+        <section class="favorites">
+            <img class="iconFavorites" src='img/icon-favoritos.svg' alt='icon favorites'>
+            <h2>Favoritos</h2>
+            <div class="imagesGeneral" id="outImgFav">
+
+            </div>
+
+            <div id="saveFirstGifo" class="saveFirstGifoHidden">
+                <img src="img/icon-mis-gifos-sin-contenido.svg" alt="image Gifos without content">
+                <p>"¡Guarda tu primer GIFO en Favoritos para que se muestre aquí!"</p>
+            </div>
+
+            <div class="buttonGeneral" onclick="clearFavorites()" id="buttonGeneralFavorites">Ver más</div>
+
+        </section>
+
+        <section class="trending iconsHover">
+            <h2>Trending GIFOS</h2>
+            <p>Mira los últimos <span> GIFOS  de nuestra comunidad.</span></p>
+            <div class="containerCarouselTrending">
+                <img class="btnBack" id="btnBack" src="img/button-left.svg" alt="">
+                <div class="imgTrending" id="sectionTrending">
+                </div>
+                <img class="btnNext" id="btnNext" src="img/button-right.svg" alt="">
+            </div>
+            <div id="divFullScreen" class="hidden"></div>
+
+        </section>
+
+    </main>
+    <footer>
+        <p>Compartir en:</p>
+        <div>
+            <a href=""><img src="img/icon_facebook.svg" alt=""></a>
+            <a href=""><img src="img/icon-twitter.svg" alt=""></a>
+            <a href=""><img src="img/icon_instagram.svg" alt=""></a>
+        </div>
+        <p>©️ GIFOS 2020 All Rights Reserved.</p>
+    </footer>
+    <div class="edgePage"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/favorites.js"></script>
+    <script type="text/javascript" src="js/trending.js"></script>
+
+</body>
+
+</html>

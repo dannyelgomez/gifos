@@ -1,0 +1,96 @@
+.trending {
+    width: 375px;
+    height: 430px;
+    background: #F3F5F8;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    h2 {
+        width: 375px;
+        height: 30px;
+        font-size: 20px;
+        line-height: 30px;
+        font-weight: 700;
+    }
+    p {
+        width: 333px;
+        height: 46px;
+        font-size: 16px;
+        text-align: center;
+        line-height: 23px;
+        span::before {
+            content: '\A';
+            white-space: pre;
+        }
+    }
+    .imgTrending {
+        width: 375px;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: repeat(3, 243px);
+        grid-template-rows: repeat(1, 187px);
+        gap: 22px;
+        margin-left: 32px;
+        img {
+            width: 243px;
+            height: 187px;
+        }
+    }
+    .btnBack,
+    .btnNext {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 376px) {
+    .trending {
+        width: 1440px;
+        height: 640px;
+        background: #F3F5F8;
+        justify-content: center;
+        h2 {
+            width: 550px;
+            height: 30px;
+            font-size: 25px;
+        }
+        p {
+            width: 360px;
+            height: 21px;
+            margin-bottom: 18px;
+        }
+        .imgTrending {
+            width: 1215px;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: repeat(3, 357px);
+            grid-template-rows: repeat(1, 275px);
+            gap: 29px;
+            justify-content: center;
+            margin-top: 53px;
+            margin-left: 0;
+            img {
+                width: 357px;
+                height: 275px;
+            }
+        }
+        .containerCarouselTrending {
+            width: 1440px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            .btnBack,
+            .btnNext {
+                display: block;
+                width: 24px;
+                height: 24px;
+                padding: 16px;
+                border: 1px solid #572EE5;
+            }
+            .btnBack:hover,
+            .btnNext:hover {
+                background-color: #572EE5;
+            }
+        }
+    }
+}

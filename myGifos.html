@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Proyecto 2</title>
+
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+
+</head>
+
+<body onload='loadContentMyGifos()'>
+    <div class="edgePage"></div>
+    <header>
+        <a href="index.html" class="logo"><img src="img/logo-mobile.svg" alt="logo page"></a>
+
+        <nav>
+            <div class="containerBurger">
+                <i id="navBar" class="fas fa-bars menu"></i>
+            </div>
+            <ul id="ulNavBar">
+                <li><a href="#" id="theme">Modo Nocturno</a></li>
+                <li><a href="favorites.html">Favoritos</a></li>
+                <li><a href="myGifos.html">Mis GIFOS</a></li>
+            </ul>
+        </nav>
+        <a href="createGifos.html" class="hiddenCreateGifos"> <img src="img/button-crear-gifo.svg" class="createGifo" alt=""></a>
+    </header>
+
+    <main>
+        <section class="myGifos">
+            <img class="iconGifos" src="img/icon-mis-gifos.svg" alt="image my Gifos">
+            <h2>Mis Gifos</h2>
+            <div class="imagesGeneral" id="imagesCreateGifos">
+
+            </div>
+
+            <div id="saveFirstGifo" class="firstMyGifo">
+                <img src="img/icon-mis-gifos-sin-contenido.svg" alt="image Gifos without content">
+                <p>"¡Anímate a crear tu primer GIFO!"</p>
+            </div>
+
+            <div id="buttonGeneral" class="buttonGeneral"> VER MÁS</div>
+        </section>
+
+
+        <section class="trending iconsHover">
+            <h2>Trending GIFOS</h2>
+            <p>Mira los últimos <span> GIFO  de nuestra comunidad.</span></p>
+            <div class="containerCarouselTrending">
+                <img class="btnBack" id='btnBack' src="img/button-left.svg" alt="">
+                <div class="imgTrending" id="sectionTrending">
+                    <!-- Trending imgs -->
+                </div>
+                <img class="btnNext" id='btnNext' src="img/button-right.svg" alt="">
+            </div>
+            <div id="divFullScreen" class="hidden"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Compartir en:</p>
+        <div>
+            <a href=""><img src="img/icon_facebook.svg" alt=""></a>
+            <a href=""><img src="img/icon-twitter.svg" alt=""></a>
+            <a href=""><img src="img/icon_instagram.svg" alt=""></a>
+        </div>
+        <p>©️ GIFOS 2020 All Rights Reserved.</p>
+
+    </footer>
+    <div class="edgePage"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/trending.js"></script>
+    <script src="js/myGifos.js"></script>
+</body>
+
+</html>

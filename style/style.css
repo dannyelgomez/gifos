@@ -625,9 +625,22 @@ nav ul li:nth-child(2)::after {
   white-space: pre;
 }
 
+.orderInpImg #btnSeacrh {
+  display: none;
+}
+
+.hiddenTitleImg {
+  height: 100px;
+}
+
+.hiddenTitleImg #familySearch,
+.hiddenTitleImg #titleSearch {
+  display: none;
+}
+
 .styleNoFound {
-  height: 576px;
   width: 1440px;
+  height: 576px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -662,6 +675,7 @@ nav ul li:nth-child(2)::after {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  z-index: 11;
 }
 
 .styleFullScreen .styleClose {
@@ -735,6 +749,15 @@ nav ul li:nth-child(2)::after {
   opacity: 0.7;
   background: #c0c0c0;
   border-radius: 6px;
+}
+
+.hiddenTitleImg {
+  height: 100px;
+}
+
+.hiddenTitleImg #familySearch,
+.hiddenTitleImg #titleSearch {
+  display: none;
 }
 
 @media only screen and (min-width: 376px) {
@@ -833,14 +856,19 @@ nav ul li:nth-child(2)::after {
     content: '';
   }
   .pets {
-    /* display: none; */
     width: 1440px;
-    /* height: 956px; */
   }
   .pets h2 {
     margin: auto;
     width: 550px;
     height: 30px;
+  }
+  .hiddenTitleImg {
+    height: auto;
+  }
+  .hiddenTitleImg #familySearch,
+  .hiddenTitleImg #titleSearch {
+    display: block;
   }
 }
 
@@ -1024,17 +1052,12 @@ nav ul li:nth-child(2)::after {
   width: 333px;
   height: 46px;
   font-size: 16px;
-  text-align: center;
   line-height: 23px;
-}
-
-.trending p span::before {
-  content: '\A';
-  white-space: pre;
+  font-weight: 400;
 }
 
 .trending .imgTrending {
-  width: 375px;
+  width: 342px;
   overflow: hidden;
   display: -ms-grid;
   display: grid;
@@ -1049,11 +1072,30 @@ nav ul li:nth-child(2)::after {
 .trending .imgTrending img {
   width: 243px;
   height: 187px;
+  /* padding-left: 22px;  */
+}
+
+.trending .containerCarouselTrending {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .trending .btnBack,
 .trending .btnNext {
-  display: none;
+  display: block;
+  position: absolute;
+  height: 187px;
+  z-index: 1;
+  opacity: 0;
+}
+
+.trending .btnBack {
+  left: 0px;
+}
+
+.trending .btnNext {
+  right: 0px;
 }
 
 @media only screen and (min-width: 376px) {
@@ -1073,11 +1115,10 @@ nav ul li:nth-child(2)::after {
   .trending p {
     width: 360px;
     height: 21px;
-    margin-bottom: 18px;
+    font-size: 18px;
   }
   .trending .imgTrending {
     width: 1215px;
-    overflow: hidden;
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (357px)[3];
@@ -1089,11 +1130,12 @@ nav ul li:nth-child(2)::after {
         -ms-flex-pack: center;
             justify-content: center;
     margin-top: 53px;
-    margin-left: 0;
+    margin-left: 0px;
   }
   .trending .imgTrending img {
     width: 357px;
     height: 275px;
+    float: initial;
   }
   .trending .containerCarouselTrending {
     width: 1440px;
@@ -1113,10 +1155,12 @@ nav ul li:nth-child(2)::after {
     height: 24px;
     padding: 16px;
     border: 1px solid #572EE5;
+    opacity: 1;
+    position: unset;
   }
   .trending .containerCarouselTrending .btnBack:hover,
   .trending .containerCarouselTrending .btnNext:hover {
-    background-color: #572EE5;
+    background: #572EE5;
   }
 }
 

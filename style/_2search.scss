@@ -90,10 +90,23 @@
     }
 }
 
-//Búsqueda no encontrada
+.orderInpImg {
+    #btnSeacrh {
+        display: none;
+    }
+}
+
+.hiddenTitleImg {
+    height: 100px;
+    #familySearch,
+    #titleSearch {
+        display: none;
+    }
+}
+
 .styleNoFound {
-    height: 576px;
     width: 1440px;
+    height: 576px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -111,6 +124,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    z-index: 11;
     .styleClose {
         position: relative;
         left: 20%;
@@ -159,6 +173,14 @@
         opacity: 0.7;
         background: #c0c0c0;
         border-radius: 6px;
+    }
+}
+
+.hiddenTitleImg {
+    height: 100px;
+    #familySearch,
+    #titleSearch {
+        display: none;
     }
 }
 
@@ -240,13 +262,18 @@
         }
     }
     .pets {
-        /* display: none; */
         width: 1440px;
-        /* height: 956px; */
         h2 {
             margin: auto;
             width: 550px;
             height: 30px;
+        }
+    }
+    .hiddenTitleImg {
+        height: auto;
+        #familySearch,
+        #titleSearch {
+            display: block;
         }
     }
 }

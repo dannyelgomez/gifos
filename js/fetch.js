@@ -240,6 +240,7 @@ function suggestSearch() {
         document.getElementById('subtitleTrending').classList.add('hidden');
         document.getElementById('descriptionTrending').classList.add('hidden');
 
+        document.getElementById('sectionMain').classList.add('hiddenTitleImg');
 
     } else {
         clearSuggest();
@@ -265,6 +266,9 @@ function clearSuggest(clear = true) {
     document.getElementById('descriptionTrending').classList.remove('hidden');
     document.getElementById('noFound').classList.add('hidden');
     document.getElementById('noFound').classList.remove('styleNoFound');
+    document.getElementById('sectionMain').classList.remove('hiddenTitleImg');
+    document.getElementById('SectionSearch').classList.add('hidden');
+
 
 }
 

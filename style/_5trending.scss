@@ -17,15 +17,11 @@
         width: 333px;
         height: 46px;
         font-size: 16px;
-        text-align: center;
         line-height: 23px;
-        span::before {
-            content: '\A';
-            white-space: pre;
-        }
+        font-weight: 400;
     }
     .imgTrending {
-        width: 375px;
+        width: 342px;
         overflow: hidden;
         display: grid;
         grid-template-columns: repeat(3, 243px);
@@ -35,11 +31,25 @@
         img {
             width: 243px;
             height: 187px;
+            /* padding-left: 22px;  */
         }
+    }
+    .containerCarouselTrending {
+        display: flex;
     }
     .btnBack,
     .btnNext {
-        display: none;
+        display: block;
+        position: absolute;
+        height: 187px;
+        z-index: 1;
+        opacity: 0;
+    }
+    .btnBack {
+        left: 0px;
+    }
+    .btnNext {
+        right: 0px;
     }
 }
 
@@ -57,21 +67,21 @@
         p {
             width: 360px;
             height: 21px;
-            margin-bottom: 18px;
+            font-size: 18px;
         }
         .imgTrending {
             width: 1215px;
-            overflow: hidden;
             display: grid;
             grid-template-columns: repeat(3, 357px);
             grid-template-rows: repeat(1, 275px);
             gap: 29px;
             justify-content: center;
             margin-top: 53px;
-            margin-left: 0;
+            margin-left: 0px;
             img {
                 width: 357px;
                 height: 275px;
+                float: initial;
             }
         }
         .containerCarouselTrending {
@@ -86,10 +96,12 @@
                 height: 24px;
                 padding: 16px;
                 border: 1px solid #572EE5;
+                opacity: 1;
+                position: unset;
             }
             .btnBack:hover,
             .btnNext:hover {
-                background-color: #572EE5;
+                background: #572EE5;
             }
         }
     }

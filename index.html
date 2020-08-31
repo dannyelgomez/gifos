@@ -4,9 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Proyecto 2</title>
-
+    <title>Proyecto 2: My GIFOS</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Roboto:wght@400;900&display=swap" rel="stylesheet">
@@ -20,7 +18,10 @@
 
         <nav>
             <div class="containerBurger">
-                <i id="navBar" class="fas fa-bars menu"></i>
+                <img src="img/burger.svg" class="menu" id="navBar" alt="Image menu burger">
+                <img src="img/button-close.svg" class="hidden" id="navBarClose" alt="Image button close">
+                <!--    <i id="navBar" class="fas fa-bars menu"></i> -->
+                <!-- <i class="fas fa-times menu"></i> -->
             </div>
             <ul id="ulNavBar">
                 <li><a href="#" id="theme">Modo Nocturno</a></li>
@@ -28,18 +29,18 @@
                 <li><a href="myGifos.html">Mis GIFOS</a></li>
             </ul>
         </nav>
-        <a href="createGifos.html" class="hiddenCreateGifos"><img src="img/button-crear-gifo.svg" class="createGifo" alt=""></a>
+        <a href="createGifos.html" class="hiddenCreateGifos"><img src="img/button-crear-gifo.svg" class="createGifo" alt="botton create"></a>
     </header>
 
     <main>
-        <section class="search">
-            <h1>Inspírate, busca, guarda, y crea <span>los mejores</span> <span>GIFOS</span></h1>
+        <section class="search" id="sectionMain">
+            <h1 id="titleSearch">Inspírate, busca, guarda, y crea <span>los mejores</span> <span>GIFOS</span></h1>
             <div class="contentSearch">
-                <img src="img/ilustra_header.svg" alt="family">
+                <img src="img/ilustra_header.svg" id="familySearch" alt="family">
                 <div class="buttonSearch">
                     <div class="containerInpImg" id="containerInpImg">
                         <input type="text" id="search" placeholder="Busca GIFOS y más" autocomplete="off">
-                        <button id="btnSearch"> <img src="img/icon-search.svg" alt="lupa"> </button>
+                        <button id="btnSearch"> <img src="img/icon-search.svg" alt="Image magnifying glass"> </button>
                         <button id="btnClose" class="btnCloseHidden"> <img src="img/close.svg" alt="close"> </button>
                     </div>
                     <ul id="ulSearch">
@@ -53,7 +54,7 @@
 
         <div id="noFound" class="hidden">
             <h2 id="noFoundH2">Hola</h2>
-            <img src="img/icon-busqueda-sin-resultado.svg" alt="">
+            <img src="img/icon-busqueda-sin-resultado.svg" alt="no result">
             <p>Intenta con otra búsqueda.</p>
         </div>
 
@@ -71,10 +72,10 @@
             <h2>Trending GIFOS</h2>
             <p>Mira los últimos <span> GIFOS  de nuestra comunidad.</span></p>
             <div class="containerCarouselTrending">
-                <img class="btnBack" id="btnBack" src="img/button-left.svg" alt="">
+                <img class="btnBack" id="btnBack" src="img/button-left.svg" alt="Image button next">
                 <div class="imgTrending" id="sectionTrending">
                 </div>
-                <img class="btnNext" id="btnNext" src="img/button-right.svg" alt="">
+                <img class="btnNext" id="btnNext" src="img/button-right.svg" alt="Image button back">
             </div>
         </section>
     </main>
@@ -82,9 +83,9 @@
     <footer>
         <p>Compartir en:</p>
         <div>
-            <a href=""><img src="img/icon_facebook.svg" alt=""></a>
-            <a href=""><img src="img/icon-twitter.svg" alt=""></a>
-            <a href=""><img src="img/icon_instagram.svg" alt=""></a>
+            <a href="https://www.facebook.com" target="_blanck"><img src="img/icon_facebook.svg" alt="Image icon facebook"></a>
+            <a href="https://www.twitter.com" target="_blanck"><img src="img/icon-twitter.svg" alt="Image icon twitter"></a>
+            <a href="https://www.instagram.com" target="_blanck"><img src="img/icon_instagram.svg" alt="Image icon instagram"></a>
         </div>
         <p>©️ GIFOS 2020 All Rights Reserved.</p>
 

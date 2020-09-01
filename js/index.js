@@ -19,7 +19,7 @@ navBarClose.addEventListener('click', () => {
 });
 
 /* Cambiar tema Nocturno */
-const btnTheme = document.getElementById('theme');
+const btnTheme = document.querySelector('#theme');
 var modeTheme = 0;
 btnTheme.addEventListener('click', () => {
     document.body.classList.toggle('changeTheme');
@@ -100,7 +100,7 @@ function fullScreen(iconFullScreen) {
     imgFullScreen.classList.add('styleImgFullScreen');
     imgFullScreen.setAttribute('id', `imgFullScreen`);
 
-    
+
     let divImgDirection = document.createElement('div');
     divImgDirection.classList.add('styleImgDirection');
 

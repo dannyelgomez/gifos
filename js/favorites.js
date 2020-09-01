@@ -5,8 +5,8 @@ let removeFavFullScreen;
 var arrFav = JSON.parse(localStorage.getItem("sendFavorites"));
 
 function loadContentFav() {
-    if(arrFav != null && arrFav != ""){
-       
+    if (arrFav != null && arrFav != "") {
+
         for (var i = 0; i < arrFav.length; i++) {
             let img = document.createElement('img');
             img.setAttribute('id', `imgGIF${i}`);
@@ -55,8 +55,8 @@ function loadContentFav() {
             /* Agregar div a la seccion */
             let outImg = document.getElementById('outImgFav');
             outImg.appendChild(div);
-            
-        }   
+
+        }
         document.getElementById('outImgFav').classList.remove('outImgFav');
         document.getElementById('buttonGeneralFavorites').classList.remove('buttonGeneralHidden');
 
@@ -64,14 +64,15 @@ function loadContentFav() {
         noHaveContent();
     }
 }
-function noHaveContent(){
+
+function noHaveContent() {
     console.log('Favoritos no tienes imagenes agregadas');
     document.getElementById('saveFirstGifo').classList = 'saveFirstGifoVisible';
     document.getElementById('outImgFav').classList.toggle('outImgFav');
     document.getElementById('buttonGeneralFavorites').classList.toggle('buttonGeneralHidden');
 }
 
-function clearFavorites(){
+function clearFavorites() {
     localStorage.clear();
     location.reload();
 }
@@ -112,17 +113,17 @@ function fullScreen(iconFullScreen) {
     auxExtractLastDigitSearch = extractLastDigit;
     let imgFullScreenSrc = document.getElementById(`imgGIF${extractLastDigit}`).src;
 
-    removeFavFullScreen = extractLastDigit ;
+    removeFavFullScreen = extractLastDigit;
 
     let imgClose = document.createElement('img');
     imgClose.src = '../img/close.svg';
-    imgClose.classList.add('styleClose'); 
+    imgClose.classList.add('styleClose');
     imgClose.setAttribute('onclick', 'closeFullScreen()');
 
 
     /* CONTENEDOR CON IMAGEN Y FLECHAS - SIGUIENTE ANTERIOR *******/
 
-   
+
 
     let imgFullScreen = document.createElement('img');
     imgFullScreen.src = imgFullScreenSrc;
@@ -133,9 +134,9 @@ function fullScreen(iconFullScreen) {
     let divImgDirection = document.createElement('div');
     divImgDirection.classList.add('styleImgDirection');
 
-  
+
     divImgDirection.appendChild(imgFullScreen);
-    
+
     /* CONTENEDOR CON TITULOS Y ICONOS *******/
     let pUser = document.createElement('p');
     pUser.innerText = "User";
@@ -169,7 +170,7 @@ function fullScreen(iconFullScreen) {
     divDescription.appendChild(divText);
     divDescription.appendChild(imgFavorite);
     divDescription.appendChild(imgDownload);
-   
+
     /* CONTENEDOR PRINCIPAL *******/
     let divFullScreen = document.getElementById('divFullScreen');
     divFullScreen.classList.add('styleFullScreen');
@@ -180,6 +181,7 @@ function fullScreen(iconFullScreen) {
     divFullScreen.appendChild(divDescription);
     document.querySelector('body').appendChild(divFullScreen);
 }
+
 function closeFullScreen() {
     document.getElementById('divFullScreen').innerHTML = "";
     document.getElementById('divFullScreen').classList.add('hidden');

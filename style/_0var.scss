@@ -244,6 +244,19 @@ a {
             }
         }
     }
+    .styleFullScreen {
+        background: rgba(55, 56, 60, 0.9);
+        .styleDivText p {
+            color: #FFFFFF;
+        }
+    }
+    .btnBack:hover,
+    .btnNext:hover {
+        background: #FFFFFF;
+    }
+    .buttonSearch {
+        border: 1 px solid #ffffff !important;
+    }
 }
 
 .hidden {

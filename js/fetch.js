@@ -29,9 +29,9 @@ function init() {
     let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=`;
     let str = document.getElementById("search").value;
     url = url.concat(str);
-    console.log(url);
+    /* console.log(url); */
     fetch(url).then(response => response.json()).then(content => {
-            console.log(content.data);
+            /* console.log(content.data); */
             if (content.data != "") {
                 try {
                     document.getElementById('sectionSearch').classList.remove('hidden');
@@ -65,13 +65,13 @@ function seeMore() {
     let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=${countSeeMore}&q=`;
     let str = document.getElementById("search").value;
     url = url.concat(str);
-    console.log(url);
+    /* console.log(url); */
 
     countSeeMore += 12;
 
 
     fetch(url).then(response => response.json()).then(content => {
-            console.log(content.data);
+            /* console.log(content.data); */
             if (content.data != "") {
                 try {
                     document.getElementById('sectionSearch').style.display = 'block';
@@ -177,7 +177,7 @@ document.getElementById("search").addEventListener('change', inputChange => {
 var arrayFavorites = [];
 
 var arrFav = JSON.parse(localStorage.getItem("sendFavorites"));
-console.log(arrFav);
+/* console.log(arrFav); */
 if (arrFav != null) {
     arrayFavorites = arrFav;
 }
@@ -189,7 +189,7 @@ function addFavorites(iconFavorite) {
     let extractLastDigit = idImgHtml.slice(6, idImgHtml.length);
     let tagGif = document.getElementById(`imgGIF${extractLastDigit}`);
     arrayFavorites.push(tagGif.src);
-    console.log(arrayFavorites);
+    /* console.log(arrayFavorites); */
     localStorage.setItem('sendFavorites', JSON.stringify(arrayFavorites));
 }
 
@@ -251,7 +251,7 @@ function suggestSearch() {
 function completeInput(valueLi) {
     let inputSearch = document.getElementById('search');
     inputSearch.value = valueLi.innerText;
-    console.log(inputSearch);
+    /* console.log(inputSearch); */
     init();
     clearSuggest(false);
 }
@@ -272,8 +272,6 @@ function clearSuggest(clear = true) {
 
 }
 
-
-
 function closeFullScreen() {
     document.getElementById('divFullScreen').innerHTML = "";
     document.getElementById('divFullScreen').classList.add('hidden');
@@ -281,7 +279,6 @@ function closeFullScreen() {
 }
 
 function fullScreen(iconFullScreen) {
-
 
     let idImgFullScreen = iconFullScreen.id;
     let extractLastDigit = idImgFullScreen.slice(6, idImgFullScreen.length);
@@ -364,21 +361,7 @@ function fullScreen(iconFullScreen) {
     divFullScreen.appendChild(divImgDirection);
     divFullScreen.appendChild(divDescription);
     document.querySelector('body').appendChild(divFullScreen);
-
-
 }
-
-/* (async() => {
-    let a = document.createElement('a');
-    let response = await fetch('https://media3.giphy.com/media/YRtLgsajXrz1FNJ6oy/giphy.gif?cid=2d00b924wr3ae59tht18wcvvebapxzloadtevp5vv5mxm6bl&rid=giphy.gif');
-    let file = await response.blob();
-    console.log(file);
-    a.download = 'nombre';
-    a.href = window.URL.createObjectURL(file);
-    a.dataset.downloadurl = ['application/octet-stream', a.download, a.href].join(':');
-    a.click();
-})(); */
-
 
 async function download(e) {
 
@@ -405,7 +388,6 @@ function backGifFullScreen() {
 
     auxExtractLastDigitSearch--;
     backOrNextGif();
-
 }
 
 function backOrNextGif() {
@@ -428,30 +410,3 @@ function backOrNextGif() {
         auxExtractLastDigitSearch = 0;
     }
 }
-
-
-
-
-
-
-
-
-//Autocomplete
-/* 
-document.getElementById('search').addEventListener('keyup', autocomplete);
-function autocomplete (){
-let keyword = document.getElementById('search').value;
-let input = document.getElementById('search');
-    if(keyword){
-    const endpointAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?api_key=${APIKEY}&q=${keyword}`; 
-    fetch(endpointAutocomplete)
-        .then(response => response.json())
-        .then(data => {
-                input.innerText = data.data[0].name;
-                input.setAttribute('onclick', 'autocompleteInput(this)' )  
-        });
-    }else{
-    }
-}
- function autocompleteInput() {
-} */

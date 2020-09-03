@@ -66,7 +66,7 @@ function loadContentFav() {
 }
 
 function noHaveContent() {
-    console.log('Favoritos no tienes imagenes agregadas');
+    /* console.log('Favoritos no tienes imagenes agregadas'); */
     document.getElementById('saveFirstGifo').classList = 'saveFirstGifoVisible';
     document.getElementById('outImgFav').classList.toggle('outImgFav');
     document.getElementById('buttonGeneralFavorites').classList.toggle('buttonGeneralHidden');
@@ -81,7 +81,7 @@ function removeFavorites(imageFavorites) {
 
     let idImgHtml = imageFavorites.id;
     let extractLastDigit = idImgHtml.slice(6, idImgHtml.length);
-    console.log(`EL ULTIMO DATO ES ${extractLastDigit}`);
+    /* console.log(`EL ULTIMO DATO ES ${extractLastDigit}`); */
 
     arrFav.splice(extractLastDigit, 1);
     localStorage.removeItem('sendFavorites');
@@ -95,7 +95,7 @@ async function download(imageFavorites) {
     let idImgHtml = imageFavorites.id;
     let extractLastDigit = idImgHtml.slice(6, idImgHtml.length);
     let tagGIF = document.getElementById(`imgGIF${extractLastDigit}`).src;
-    console.log(tagGIF);
+    /* console.log(tagGIF); */
 
     let a = document.createElement('a');
     let response = await fetch(tagGIF);

@@ -78,7 +78,7 @@ if (modeThemeResponse == 1) {
 async function downloadFullScreen(e) {
 
     let imgFullScreen = document.getElementById('imgFullScreen').src;
-    console.log(imgFullScreen);
+    /*console.log(imgFullScreen); */
 
     let a = document.createElement('a');
     let response = await fetch(imgFullScreen);
@@ -91,7 +91,7 @@ async function downloadFullScreen(e) {
 
 var arrayFavorites = [];
 var arrFav = JSON.parse(localStorage.getItem("sendFavorites"));
-console.log(arrFav);
+/* console.log(arrFav); */
 if (arrFav != null) {
     arrayFavorites = arrFav;
 }
@@ -99,9 +99,9 @@ if (arrFav != null) {
 function addFavoritesFullScreen(iconFavorite) {
 
     let imgFullScreen = document.getElementById('imgFullScreen').src;
-    console.log(imgFullScreen);
+    /* console.log(imgFullScreen); */
 
     arrayFavorites.push(imgFullScreen);
-    console.log(arrayFavorites);
+    /* console.log(arrayFavorites); */
     localStorage.setItem('sendFavorites', JSON.stringify(arrayFavorites));
 }

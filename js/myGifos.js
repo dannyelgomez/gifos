@@ -4,7 +4,7 @@ let btnGeneral = document.getElementById('buttonGeneral');
 let removeFavFullScreen;
 
 var arrCreate = JSON.parse(localStorage.getItem('sendCreateGifos'));
-console.log(arrCreate);
+/* console.log(arrCreate); */
 
 function loadContentMyGifos() {
     if (arrCreate != null && arrCreate != "") {
@@ -90,7 +90,7 @@ async function download(imageMyGifos) {
     let idImgHtml = imageMyGifos.id;
     let extractLastDigit = idImgHtml.slice(6, idImgHtml.length);
     let tagGIF = document.getElementById(`imgGIF${extractLastDigit}`).src;
-    console.log(tagGIF);
+    /* console.log(tagGIF); */
     let a = document.createElement('a');
     let response = await fetch(tagGIF);
     let file = await response.blob();

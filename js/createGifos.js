@@ -52,26 +52,26 @@ function startRecordingFn(stream) {
 }
 
 
-arrayCreateGifos = [];
-var arrCreate = JSON.parse(localStorage.getItem("sendCreateGifos"));
+/* arrayCreateGifos = []; */
+/* var arrCreate = JSON.parse(localStorage.getItem("sendCreateGifos")); */
 
-
-if (arrCreate != null) {
+/* if (arrCreate != null) {
     arrayCreateGifos = arrCreate;
-}
+} */
 
 function stopRecordingFn() {
     recorder.stopRecording(function() {
         console.log(URL.createObjectURL(this.blob));
 
-        var reader = new FileReader();
+        data64 = recorder.getBlob();
+        /* var reader = new FileReader();
         reader.readAsDataURL(recorder.getBlob());
         reader.onloadend = function() {
             var base64data = reader.result;
-            data64 = base64data;
+            /* data64 = base64data;
             arrayCreateGifos.push(base64data);
-            localStorage.setItem('sendCreateGifos', JSON.stringify(arrayCreateGifos));
-        }
+            localStorage.setItem('sendCreateGifos', JSON.stringify(arrayCreateGifos)); 
+        }*/
     });
 
 
@@ -82,16 +82,30 @@ function stopRecordingFn() {
 /* var localCreateGifos = JSON.parse(localStorage.getItem("sendCreateGifos")); */
 
 
-function sendGif(data) {
+async function sendGif(data) {
     const endpoint = "https://upload.giphy.com/v1/gifs";
-    const username = 'lescobarc';
+    const username = 'Santi-1234';
+
     var formData = new FormData();
     formData.append("api_key", APIKEY);
     formData.append("username", username);
-    formData.append("file", data);
-    let request = new XMLHttpRequest();
+    formData.append("file", data, 'misGif.gif');
+    /* let request = new XMLHttpRequest();
     request.open("POST", endpoint);
-    request.send(formData);
+    /* request.send(formData); 
+    let variableRespuesta = request.send(formData);
+    console.log(variableRespuesta); */
+
+    let res = await fetch(endpoint, {
+        method: 'POST',
+        body: formData
+    });
+    let gifResult = await res.json();
+    console.log(gifResult);
+
+    let ids = localStorage.getItem('sendCreateGifos') != null ? localStorage.getItem('sendCreateGifos').split(',') : [];
+    ids.push(gifResult.data.id);
+    localStorage.setItem('sendCreateGifos', ids);
 }
 
 document.getElementById('btnStart').addEventListener("click", function() {
@@ -111,12 +125,13 @@ document.getElementById('btnStart').addEventListener("click", function() {
         btnActive();
         document.getElementById('btnRecordCam').classList.add('activeNum');
         startRecordingFn(streamVar);
+        interval();
         document.getElementById('btnStart').innerText = 'FINALIZAR';
 
     } else if (document.getElementById('btnStart').innerText == 'FINALIZAR') {
         //Finaliza grabación
         stopRecordingFn();
-
+        stopTimer();
     } else if (document.getElementById('btnStart').innerText == 'SUBIR GIFO') {
         //Subir Gifo a Giphy
         document.getElementById("camLoad").classList.add('camLoadHidden');
@@ -126,7 +141,6 @@ document.getElementById('btnStart').addEventListener("click", function() {
         sendGif(data64);
     }
 })
-
 
 function divUpRecord() {
     let upRecord = document.getElementById('upRecord')
@@ -170,6 +184,6 @@ function interval() {
 }
 
 function stopTimer() {
-    stopInterval(time);
-    document.getElementById('timer').innerText = "REPETIR CAPTURA"
+    clearInterval(time);
+    document.getElementById("timer").innerText = "REPETIR CAPTURA";
 }

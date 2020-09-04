@@ -3,15 +3,24 @@ let divSaveFirstGifo = document.getElementById('saveFirstGifo');
 let btnGeneral = document.getElementById('buttonGeneral');
 let removeFavFullScreen;
 
-var arrCreate = JSON.parse(localStorage.getItem('sendCreateGifos'));
-/* console.log(arrCreate); */
 
-function loadContentMyGifos() {
-    if (arrCreate != null && arrCreate != "") {
-        for (let i = 0; i < arrCreate.length; i++) {
+/* var arrCreate = JSON.parse(localStorage.getItem('sendCreateGifos')); */
+
+let url = `https://api.giphy.com/v1/gifs?api_key=${APIKEY}&ids=${localStorage.getItem('sendCreateGifos')}`;
+fetch(url).then(result => result.json().then(data => loadContentMyGifos(data)));
+
+
+function loadContentMyGifos(data) {
+
+    if (data != null && data != "") {
+
+        let gifs = data.data;
+        for (var i = 0; i < gifs.length; i++) {
             let img = document.createElement('img');
             img.setAttribute('id', `imgGIF${i}`);
-            img.src = arrCreate[i];
+            img.setAttribute('data-id', data.data[i].id);
+            img.src = gifs[i].images.original.url;
+            img.alt = data.data[i].title;
 
             let pUser = document.createElement('p');
             pUser.innerText = "User";
@@ -20,7 +29,6 @@ function loadContentMyGifos() {
             /* pTitle.innerText = content.data[i].title; */
             pTitle.innerText = 'Titulo';
             pTitle.setAttribute('class', 'pTitle');
-
 
             let imgFavorite = document.createElement('img');
             imgFavorite.setAttribute('id', `imgFav${i}`);
@@ -58,39 +66,50 @@ function loadContentMyGifos() {
             outImg.appendChild(div);
 
         }
+
         divImagesCreateGifos.classList.remove('hidden');
         divImagesCreateGifos.classList.add('imagesGeneral');
+
         btnGeneral.classList.remove('hidden');
+
         divSaveFirstGifo.classList.add('hidden');
         divSaveFirstGifo.classList.remove('firstMyGifo');
     } else {
         noHaveContentMyGifos();
     }
-
 }
 
 function noHaveContentMyGifos() {
     divImagesCreateGifos.classList.add('hidden');
-    btnGeneral.classList.add('hidden');
     divImagesCreateGifos.classList.remove('imagesGeneral');
+    btnGeneral.classList.add('hidden');
+
     divSaveFirstGifo.classList.remove('hidden');
 }
 
+
 function removeMyGifos(imageMyGifos) {
-    let idImgHtml = imageMyGifos.id;
-    let extractLastDigit = idImgHtml.slice(6, idImgHtml.length);
-    arrCreate.splice(extractLastDigit, 1);
-    localStorage.removeItem('sendCreateGifos');
-    localStorage.setItem('sendCreateGifos', JSON.stringify(arrCreate));
+
+    let idImgFullScreen = imageMyGifos.id;
+    let extractLastDigit = idImgFullScreen.slice(6, idImgFullScreen.length);
+    let idErrase = document.getElementById(`imgGIF${extractLastDigit}`);
+
+    let ids = localStorage.getItem('sendCreateGifos').split(',');
+
+    let pos = ids.indexOf(idErrase.dataset.id);
+    console.log(pos)
+    if (pos < 0) return;
+    ids.splice(pos, 1);
+    localStorage.setItem('sendCreateGifos', ids);
     location.reload();
 }
 
-
 async function download(imageMyGifos) {
+
     let idImgHtml = imageMyGifos.id;
     let extractLastDigit = idImgHtml.slice(6, idImgHtml.length);
     let tagGIF = document.getElementById(`imgGIF${extractLastDigit}`).src;
-    /* console.log(tagGIF); */
+
     let a = document.createElement('a');
     let response = await fetch(tagGIF);
     let file = await response.blob();
@@ -115,23 +134,21 @@ function fullScreen(iconFullScreen) {
     imgClose.setAttribute('onclick', 'closeFullScreen()');
 
 
-    /* CONTENEDOR CON IMAGEN Y FLECHAS - SIGUIENTE ANTERIOR *******/
-
-
+    /* CONTENEDOR CON IMAGEN Y FLECHAS - SIGUIENTE ANTERIOR *******************/
 
     let imgFullScreen = document.createElement('img');
     imgFullScreen.src = imgFullScreenSrc;
     imgFullScreen.classList.add('styleImgFullScreen');
     imgFullScreen.setAttribute('id', `imgFullScreen`);
 
-
     let divImgDirection = document.createElement('div');
     divImgDirection.classList.add('styleImgDirection');
 
-
     divImgDirection.appendChild(imgFullScreen);
 
-    /* CONTENEDOR CON TITULOS Y ICONOS *******/
+
+
+    /* CONTENEDOR CON TITULOS Y ICONOS *******************/
     let pUser = document.createElement('p');
     pUser.innerText = "User";
 
@@ -141,16 +158,15 @@ function fullScreen(iconFullScreen) {
     let pTitle = document.createElement('p');
     pTitle.innerText = sendTitle;
 
-    //div title - user
     let divText = document.createElement('div');
-    divText.classList.add('styleDivText')
+    divText.classList.add('styleDivText');
 
     divText.appendChild(pUser);
     divText.appendChild(pTitle);
 
     let imgFavorite = document.createElement('img');
     imgFavorite.src = "img/icon_trash.svg";
-    imgFavorite.setAttribute('onclick', 'removeMyGifosFullScreen(this)');
+    imgFavorite.setAttribute('onclick', 'removeMyGifosFullScreen()');
     imgFavorite.setAttribute('class', 'icon imgFavorite');
 
     let imgDownload = document.createElement('img');
@@ -165,7 +181,7 @@ function fullScreen(iconFullScreen) {
     divDescription.appendChild(imgFavorite);
     divDescription.appendChild(imgDownload);
 
-    /* CONTENEDOR PRINCIPAL *******/
+    /* CONTENEDOR PRINCIPAL *********************/
     let divFullScreen = document.getElementById('divFullScreen');
     divFullScreen.classList.add('styleFullScreen');
     divFullScreen.classList.remove('hidden');
@@ -188,5 +204,4 @@ function removeMyGifosFullScreen() {
     localStorage.removeItem('sendCreateGifos');
     localStorage.setItem('sendCreateGifos', JSON.stringify(arrCreate));
     location.reload();
-
 }

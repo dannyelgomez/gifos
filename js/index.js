@@ -20,13 +20,13 @@ const btnTheme = document.querySelector('#theme');
 var modeTheme = 0;
 btnTheme.addEventListener('click', () => {
     document.body.classList.toggle('changeTheme');
-    if (btnTheme.innerText == "Modo Nocturno") {
-        btnTheme.innerText = "Modo Diurno";
+    if (btnTheme.innerText == "MODO NOCTURNO") {
+        btnTheme.innerText = "MODO DIURNO";
         modeTheme = 1;
         /* debugger */
         ImgDarkTheme();
     } else {
-        btnTheme.innerText = "Modo Nocturno";
+        btnTheme.innerText = "MODO NOCTURNO";
         modeTheme = 0;
         ImgLightTheme();
     }
@@ -72,7 +72,10 @@ var modeThemeResponse = JSON.parse(localStorage.getItem('sendTheme'));
 //Mantener Tema al cambiar de páginas index
 if (modeThemeResponse == 1) {
     document.body.classList.toggle('changeTheme');
-    btnTheme.innerText = "Modo  Diurno";
+    btnTheme.innerText = "MODO DIURNO";
+    ImgDarkTheme();
+} else {
+    ImgLightTheme();
 }
 
 async function downloadFullScreen(e) {

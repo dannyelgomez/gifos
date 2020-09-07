@@ -70,7 +70,7 @@ a {
     margin: 46px 21px 78px 21px;
     display: grid;
     grid-template-columns: 156px 156px;
-    grid-template-rows: repeat(6, 120px);
+    grid-template-rows: 120px, 120px, 120px, 120px, 120px, 120px;
     gap: 25px 21px;
     img {
         width: 156px;
@@ -134,7 +134,7 @@ a {
             left: 12px;
             display: block;
             font-size: 15px;
-            font-weight: 400px;
+            font-weight: 400;
             text-align: left;
         }
         .pTitle {
@@ -275,8 +275,8 @@ a {
     .imagesGeneral {
         margin: 36px 156px 78px 157px;
         display: grid;
-        grid-template-columns: repeat(4, 260px);
-        grid-template-rows: repeat(3, 200px);
+        grid-template-columns: 260px, 260px, 260px, 260px;
+        grid-template-rows: 200px, 200px, 200px;
         gap: 29px 29px;
         img {
             width: 260px;
@@ -289,6 +289,18 @@ a {
                 background: #37383C;
             }
         }
+        .active {
+            background: #37383C;
+        }
+        .btnBack,
+        .btnNext {
+            background: #222326;
+            border-color: #000000 !important;
+        }
+        .btnBack:hover,
+        .btnNext:hover {
+            background: #FFFFFF;
+        }
     }
     .btnBack,
     .btnNext {
@@ -297,18 +309,24 @@ a {
         height: 24px;
         padding: 16px;
         border: 1px solid #572EE5;
+        cursor: pointer;
     }
-    .btnBack:hover,
+    .btnBack:hover {
+        background-image: url('../img/Button-Slider-left-hover.svg');
+        background-repeat: no-repeat;
+        background-position: 4px;
+        background-size: 100%;
+        border: 0;
+    }
     .btnNext:hover {
-        background: #572EE5;
+        background-image: url('../img/Button-Slider-right-hover.svg');
+        background-repeat: no-repeat;
+        background-position: 4px;
+        background-size: 100%;
+        border: 0;
     }
     .active {
         background: #FFFFFF;
         color: #572EE5;
-    }
-    .changeTheme {
-        .active {
-            background: #37383C;
-        }
     }
 }

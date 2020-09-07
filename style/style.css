@@ -321,6 +321,18 @@ a {
   .changeTheme nav ul {
     background: #37383C;
   }
+  .changeTheme .active {
+    background: #37383C;
+  }
+  .changeTheme .btnBack,
+  .changeTheme .btnNext {
+    background: #222326;
+    border-color: #000000 !important;
+  }
+  .changeTheme .btnBack:hover,
+  .changeTheme .btnNext:hover {
+    background: #FFFFFF;
+  }
   .btnBack,
   .btnNext {
     display: block;
@@ -328,17 +340,25 @@ a {
     height: 24px;
     padding: 16px;
     border: 1px solid #572EE5;
+    cursor: pointer;
   }
-  .btnBack:hover,
+  .btnBack:hover {
+    background-image: url("../img/Button-Slider-left-hover.svg");
+    background-repeat: no-repeat;
+    background-position: 4px;
+    background-size: 100%;
+    border: 0;
+  }
   .btnNext:hover {
-    background: #572EE5;
+    background-image: url("../img/Button-Slider-right-hover.svg");
+    background-repeat: no-repeat;
+    background-position: 4px;
+    background-size: 100%;
+    border: 0;
   }
   .active {
     background: #FFFFFF;
     color: #572EE5;
-  }
-  .changeTheme .active {
-    background: #37383C;
   }
 }
 
@@ -1166,6 +1186,9 @@ nav ul li:nth-child(2)::after {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    /* .btnBack:hover,
+            .btnNext:hover {
+                background-color: #572EE5; */
   }
   .trending .containerCarouselTrending .btnBack,
   .trending .containerCarouselTrending .btnNext {
@@ -1177,9 +1200,19 @@ nav ul li:nth-child(2)::after {
     opacity: 1;
     position: unset;
   }
-  .trending .containerCarouselTrending .btnBack:hover,
+  .trending .containerCarouselTrending .btnBack:hover {
+    background-image: url("../img/Button-Slider-left-hover.svg");
+    background-repeat: no-repeat;
+    background-position: 4px;
+    background-size: 100%;
+    border: 0;
+  }
   .trending .containerCarouselTrending .btnNext:hover {
-    background: #572EE5;
+    background-image: url("../img/Button-Slider-right-hover.svg");
+    background-repeat: no-repeat;
+    background-position: 4px;
+    background-size: 100%;
+    border: 0;
   }
 }
 

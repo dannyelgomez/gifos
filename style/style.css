@@ -131,7 +131,7 @@ a {
 }
 
 .iconsHover .imgHover:hover .imgFavorite:active {
-  content: url("./img/icon-fav-active.svg");
+  content: url("../img/icon-fav-active.svg");
 }
 
 .iconsHover .imgHover:hover .imgDownload {
@@ -345,14 +345,14 @@ a {
     cursor: pointer;
   }
   .btnBack:hover {
-    background-image: url("./img/Button-Slider-left-hover.svg");
+    background-image: url("../img/button-slider-left-hover.svg");
     background-repeat: no-repeat;
     background-position: 3px;
     background-size: 100%;
     border: 0;
   }
   .btnNext:hover {
-    background-image: url("./img/Button-Slider-right-hover.svg");
+    background-image: url("../img/Button-Slider-right-hover.svg");
     background-repeat: no-repeat;
     background-position: 3px;
     background-size: 100%;
@@ -389,7 +389,7 @@ a {
     display: block;
   }
   .iconsHover .imgHover:hover .imgFavorite:active {
-    content: url(./img/icon-fav-active.svg);
+    content: url("../img/icon-fav-active.svg");
   }
   .iconsHover .imgHover:hover .imgDownload {
     top: 10px;
@@ -419,14 +419,6 @@ a {
   }
 }
 
-/* .container-button{
-     position: absolute;
-     left: 50%;
-     top: 50%;
-     transform: translate(-50%, -50%) scale(3);
-     padding: 4%;
-     background: #008ef7;
-} */
 body {
   margin: 0;
   padding: 0;
@@ -1255,14 +1247,14 @@ nav ul li:nth-child(2)::after {
     position: unset;
   }
   .trending .containerCarouselTrending .btnBack:hover {
-    background-image: url("./img/Button-Slider-left-hover.svg");
+    background-image: url("../img/button-slider-left-hover.svg");
     background-repeat: no-repeat;
     background-position: 4px;
     background-size: 100%;
     border: 0;
   }
   .trending .containerCarouselTrending .btnNext:hover {
-    background-image: url("./img/Button-Slider-right-hover.svg");
+    background-image: url("../img/Button-Slider-right-hover.svg");
     background-repeat: no-repeat;
     background-position: 4px;
     background-size: 100%;
@@ -1513,8 +1505,7 @@ footer p:nth-child(2) {
     font-weight: 400;
   }
   footer p:nth-child(1) {
-    /*             width: 79px;
- */
+    /*width: 79px; */
     height: 31px;
   }
   footer p:nth-child(2) {

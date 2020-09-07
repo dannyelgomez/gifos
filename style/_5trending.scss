@@ -24,8 +24,8 @@
         width: 342px;
         overflow: hidden;
         display: grid;
-        grid-template-columns: repeat(3, 243px);
-        grid-template-rows: repeat(1, 187px);
+        grid-template-columns: 243px 243px 243px;
+        grid-template-rows: 187px;
         gap: 22px;
         margin-left: 32px;
         img {
@@ -72,8 +72,8 @@
         .imgTrending {
             width: 1215px;
             display: grid;
-            grid-template-columns: repeat(3, 357px);
-            grid-template-rows: repeat(1, 275px);
+            grid-template-columns: 357px 357px 357px;
+            grid-template-rows: 275px;
             gap: 29px;
             justify-content: center;
             margin-top: 53px;

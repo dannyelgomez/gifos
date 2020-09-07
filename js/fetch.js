@@ -45,7 +45,7 @@ function init() {
                     console.log(error);
                 }
             } else {
-                alert('No hay GIF para la palabra buscada: ' + document.getElementById('search').value);
+                console.log('No hay GIF para la palabra buscada: ' + document.getElementById('search').value);
                 showMessageNoFound();
             }
 
@@ -82,11 +82,11 @@ function seeMore() {
                     createImgSearch(content, countID);
 
                 } catch (error) {
-                    alert('No hay más imagenes');
+                    console.log('No hay más imagenes');
                     console.log(error);
                 }
             } else {
-                alert('No hay GIF para la palabra buscada: ' + document.getElementById('search').value);
+                console.log('No hay GIF para la palabra buscada: ' + document.getElementById('search').value);
                 showMessageNoFound();
             }
         })

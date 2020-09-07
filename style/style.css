@@ -71,8 +71,8 @@ a {
   display: grid;
   -ms-grid-columns: 156px 156px;
       grid-template-columns: 156px 156px;
-  -ms-grid-rows: (120px)[6];
-      grid-template-rows: repeat(6, 120px);
+  -ms-grid-rows: 120px 120px 120px 120px 120px 120px;
+      grid-template-rows: 120px 120px 120px 120px 120px 120px;
   gap: 25px 21px;
 }
 
@@ -91,14 +91,15 @@ a {
 }
 
 .iconsHover .containerImg .icon {
-  width: 17px;
-  height: 17px;
-  padding: 10px;
+  width: 10px;
+  height: 10px;
+  padding: 5px;
   position: absolute;
   background: #FFFFFF;
   border-radius: 6px;
   z-index: 10;
   display: none;
+  cursor: pointer;
 }
 
 .iconsHover .containerImg .pUser,
@@ -125,7 +126,7 @@ a {
 
 .iconsHover .imgHover:hover .imgFavorite {
   top: 10px;
-  right: 95px;
+  right: 70px;
   display: block;
 }
 
@@ -135,7 +136,7 @@ a {
 
 .iconsHover .imgHover:hover .imgDownload {
   top: 10px;
-  right: 52px;
+  right: 40px;
   display: block;
 }
 
@@ -146,21 +147,22 @@ a {
 }
 
 .iconsHover .imgHover:hover .pUser {
-  top: 121px;
+  top: 60px;
   left: 12px;
   display: block;
-  font-size: 15px;
-  font-weight: 400px;
+  font-size: 11px;
+  font-weight: 400;
   text-align: left;
 }
 
 .iconsHover .imgHover:hover .pTitle {
-  top: 143px;
+  top: 80px;
   left: 12px;
   display: block;
-  font-size: 16px;
+  font-size: 10px;
   font-weight: 700;
   text-align: left;
+  line-height: 1;
 }
 
 .active {
@@ -288,7 +290,7 @@ a {
 }
 
 .changeTheme .buttonSearch {
-  border: 1 px solid #ffffff !important;
+  border: 1px solid #FFFFFF !important;
 }
 
 .hidden {
@@ -308,10 +310,10 @@ a {
     margin: 36px 156px 78px 157px;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (260px)[4];
-        grid-template-columns: repeat(4, 260px);
-    -ms-grid-rows: (200px)[3];
-        grid-template-rows: repeat(3, 200px);
+    -ms-grid-columns: 260px 260px 260px 260px;
+        grid-template-columns: 260px 260px 260px 260px;
+    -ms-grid-rows: 200px 200px 200px;
+        grid-template-rows: 200px 200px 200px;
     gap: 29px 29px;
   }
   .imagesGeneral img {
@@ -345,20 +347,75 @@ a {
   .btnBack:hover {
     background-image: url("../img/Button-Slider-left-hover.svg");
     background-repeat: no-repeat;
-    background-position: 4px;
+    background-position: 3px;
     background-size: 100%;
     border: 0;
   }
   .btnNext:hover {
     background-image: url("../img/Button-Slider-right-hover.svg");
     background-repeat: no-repeat;
-    background-position: 4px;
+    background-position: 3px;
     background-size: 100%;
     border: 0;
   }
   .active {
     background: #FFFFFF;
     color: #572EE5;
+  }
+  .iconsHover .containerImg {
+    position: relative;
+  }
+  .iconsHover .containerImg .icon {
+    width: 17px;
+    height: 17px;
+    padding: 10px;
+    position: absolute;
+    background: #FFFFFF;
+    border-radius: 6px;
+    z-index: 10;
+    display: none;
+    cursor: pointer;
+  }
+  .iconsHover .imgHover:hover {
+    background-color: #572EE5;
+  }
+  .iconsHover .imgHover:hover img:nth-child(1) {
+    opacity: 0.3;
+    background-color: #572EE5;
+  }
+  .iconsHover .imgHover:hover .imgFavorite {
+    top: 10px;
+    right: 95px;
+    display: block;
+  }
+  .iconsHover .imgHover:hover .imgFavorite:active {
+    content: url(/img/icon-fav-active.svg);
+  }
+  .iconsHover .imgHover:hover .imgDownload {
+    top: 10px;
+    right: 52px;
+    display: block;
+  }
+  .iconsHover .imgHover:hover .imgFullSize {
+    top: 10px;
+    right: 10px;
+    display: block;
+  }
+  .iconsHover .imgHover:hover .pUser {
+    top: 121px;
+    left: 12px;
+    display: block;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: left;
+  }
+  .iconsHover .imgHover:hover .pTitle {
+    top: 143px;
+    left: 12px;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: left;
   }
 }
 
@@ -949,9 +1006,6 @@ nav ul li:nth-child(2)::after {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: space-around;
-      -ms-flex-align: space-around;
-          align-items: space-around;
 }
 
 .favorites .outImgFav {
@@ -1002,8 +1056,8 @@ nav ul li:nth-child(2)::after {
 }
 
 .myGifos .imagesGeneral {
-  -ms-grid-rows: (120px)[4];
-      grid-template-rows: repeat(4, 120px);
+  -ms-grid-rows: 120px 120px 120px 120px 120px 120px;
+      grid-template-rows: 120px 120px 120px 120px 120px 120px;
 }
 
 .myGifos h2 {
@@ -1030,8 +1084,8 @@ nav ul li:nth-child(2)::after {
     font-size: 25px;
   }
   .myGifos .imagesGeneral {
-    -ms-grid-rows: (200px)[2];
-        grid-template-rows: repeat(2, 200px);
+    -ms-grid-rows: 200px 200px;
+        grid-template-rows: 200px 200px;
   }
   .myGifos .firstMyGifo {
     height: 690px;
@@ -1100,10 +1154,10 @@ nav ul li:nth-child(2)::after {
   overflow: hidden;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (243px)[3];
-      grid-template-columns: repeat(3, 243px);
-  -ms-grid-rows: (187px)[1];
-      grid-template-rows: repeat(1, 187px);
+  -ms-grid-columns: 243px 243px 243px;
+      grid-template-columns: 243px 243px 243px;
+  -ms-grid-rows: 187px;
+      grid-template-rows: 187px;
   gap: 22px;
   margin-left: 32px;
 }
@@ -1160,10 +1214,10 @@ nav ul li:nth-child(2)::after {
     width: 1215px;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (357px)[3];
-        grid-template-columns: repeat(3, 357px);
-    -ms-grid-rows: (275px)[1];
-        grid-template-rows: repeat(1, 275px);
+    -ms-grid-columns: 357px 357px 357px;
+        grid-template-columns: 357px 357px 357px;
+    -ms-grid-rows: 275px;
+        grid-template-rows: 275px;
     gap: 29px;
     -webkit-box-pack: center;
         -ms-flex-pack: center;

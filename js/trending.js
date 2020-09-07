@@ -119,7 +119,7 @@ function createImgTrending() {
             console.log(error);
         }
     } else {
-        alert('No hay GIF para la palabra buscada: ' + document.getElementById('search').value);
+        console.log('No hay GIF para la palabra buscada: ' + document.getElementById('search').value);
     }
 }
 

@@ -7,7 +7,7 @@
         height: 21px;
     }
     .imagesGeneral {
-        grid-template-rows: 120px, 120px, 120px, 120px, 120px, 120px;
+        grid-template-rows: 120px 120px 120px 120px 120px 120px;
     }
     h2 {
         width: 375px;
@@ -33,7 +33,7 @@
             font-size: 25px;
         }
         .imagesGeneral {
-            grid-template-rows: 200px, 200px;
+            grid-template-rows: 200px 200px;
         }
         .firstMyGifo {
             height: 690px;

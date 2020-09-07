@@ -40,6 +40,7 @@ let closeNav = document.getElementById('navBarClose');
 let camara = document.getElementById('camara');
 let movie = document.getElementById('movie');
 let btnSearch = document.getElementById('imgBtnSearch')
+let imgClosesearch = document.getElementById('imgCloseSeacrh');
 
 function ImgDarkTheme() {
     logo.src = "/img/Logo-modo-noc.svg";
@@ -50,7 +51,8 @@ function ImgDarkTheme() {
         movie.src = "/img/pelicula-modo-noc.svg";
     }
     if (btnSearch != null) {
-        btnSearch.src = "/img/icon-search-mod-noc.svg"
+        btnSearch.src = "/img/icon-search-mod-noc.svg";
+        imgClosesearch.src = "img/close-modo-noct.svg";
     }
 }
 
@@ -64,6 +66,7 @@ function ImgLightTheme() {
     }
     if (btnSearch != null) {
         btnSearch.src = "/img/icon-search.svg"
+        imgCloseSearch.src = "/img/button-close.svg"
     }
 }
 //traer información del tema actual

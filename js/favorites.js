@@ -72,10 +72,10 @@ function noHaveContent() {
     document.getElementById('buttonGeneralFavorites').classList.toggle('buttonGeneralHidden');
 }
 
-function clearFavorites() {
+/* function clearFavorites() {
     localStorage.clear();
     location.reload();
-}
+} */
 
 function removeFavorites(imageFavorites) {
 

@@ -267,7 +267,7 @@ function clearSuggest(clear = true) {
     document.getElementById('noFound').classList.add('hidden');
     document.getElementById('noFound').classList.remove('styleNoFound');
     document.getElementById('sectionMain').classList.remove('hiddenTitleImg');
-    document.getElementById('SectionSearch').classList.add('hidden');
+    document.getElementById('sectionSearch').classList.add('hidden');
 
 
 }

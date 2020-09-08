@@ -86,7 +86,6 @@ function noHaveContentMyGifos() {
     btnGeneral.classList.add('hidden');
 
     divSaveFirstGifo.classList.remove('hidden');
-    localStorage.clear('sendCreateGifos');
 }
 
 

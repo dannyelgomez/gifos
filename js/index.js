@@ -40,19 +40,21 @@ let closeNav = document.getElementById('navBarClose');
 let camara = document.getElementById('camara');
 let movie = document.getElementById('movie');
 let btnSearch = document.getElementById('imgBtnSearch')
-let imgClosesearch = document.getElementById('imgCloseSeacrh');
+let imgCloseSearch = document.getElementById('imgCloseSearch');
 
 function ImgDarkTheme() {
     logo.src = "./img/Logo-modo-noc.svg";
     burger.src = "./img/burger-modo-noct.svg";
     closeNav.src = "./img/close-modo-noct.svg";
+
+
     if (camara != null && movie != null) {
         camara.src = "./img/camara-modo-noc.svg";
         movie.src = "./img/pelicula-modo-noc.svg";
     }
     if (btnSearch != null) {
         btnSearch.src = "./img/icon-search-mod-noc.svg";
-        imgClosesearch.src = "./img/close-modo-noct.svg";
+        imgCloseSearch.src = "./img/close-modo-noct.svg"
     }
 }
 
